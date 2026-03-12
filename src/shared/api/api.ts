@@ -15,7 +15,12 @@ export function fetchProducts({
     search?: string;
     sort?: 'rating' | 'price' | 'name';
 }) {
-    return fetch(`https://ip-194-99-21-145-139178.vps.hosted-by-mvps.net/api/v1/products`)
+    return fetch(`/mock-data.json`, {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        }
+    })
         .then((res) => res.json())
         .then((res) => (res.data.products || [] as ProductType[])
             .filter((product: ProductType) => product.name.toLowerCase().includes(search?.toLowerCase() || ''))
