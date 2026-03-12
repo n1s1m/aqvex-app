@@ -4,7 +4,7 @@ import type { PaginatedResponse } from "@/shared/types/types";
 import { PaginationLink, PaginationNext, PaginationPrevious } from "@/shared/ui";
 
 export function ProductsPagination<T>({ productsPaginated, onPageChange }: { productsPaginated: Promise<PaginatedResponse<T>>, onPageChange: (page: number) => void }) {
-    const [isLoading, startTransition] = useTransition();
+    const [isLoading, _startTransition] = useTransition();
     const { total_pages, page: currentPage, pages } = use(productsPaginated);
     if (total_pages <= 1) return null;
     return (
