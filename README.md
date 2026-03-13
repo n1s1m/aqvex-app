@@ -10,10 +10,6 @@ To add components to your app, run the following command:
 npx shadcn@latest add button
 ```
 
-```live demo on vercel
-https://aqvex-app.vercel.app/
-```
-
 This will place the ui components in the `src/components` directory.
 
 ## Using components
@@ -37,3 +33,7 @@ https://ip-194-99-21-145-139178.vps.hosted-by-mvps.net/api/v1/products
 Очікуємо на виконання, до 2-х днів, результат потрібно завантажити на GitHub та надати доступ користувачу montythora: https://github.com/montythora
 
 Дякую!"
+
+
+live demo on vercel
+https://aqvex-app.vercel.app/
