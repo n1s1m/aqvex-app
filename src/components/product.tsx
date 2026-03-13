@@ -1,4 +1,4 @@
-import { Check, CircleX, Droplet, ShoppingCart } from "lucide-react";
+import { Check, X, Droplet, ShoppingCart } from "lucide-react";
 import { Rating } from 'react-simple-star-rating'
 
 import type { Product as ProductType } from "@/shared/types/types";
@@ -38,7 +38,7 @@ export function Product({ product }: { product: ProductType }) {
                 </div>
                 <div className="flex items-center gap-2 flex-row pt-8">
                     <p className="text-primary text-sm flex items-center gap-2 flex-row">
-                        {product.in_stock ? <Check className="w-4 h-4 text-white bg-green-500 rounded-full p-1" /> : <CircleX className="w-4 h-4 text-white bg-red-500 rounded-full p-1" />}
+                        {product.in_stock ? <Check className="w-5 h-5 text-white bg-green-500 rounded-full p-0.5" strokeWidth={3} /> : <X className="w-5 h-5 text-white bg-red-500 rounded-full p-0.5" strokeWidth={3} />}
                         <span className="text-primary text-sm font-normal">
                             {product.in_stock ? "В наличии" : "Нет в наличии"}
                         </span>
