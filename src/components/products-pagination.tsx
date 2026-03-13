@@ -10,16 +10,20 @@ export function ProductsPagination<T>({ productsPaginated, onPageChange }: { pro
     return (
         <nav className="flex items-center justify-center gap-2 flex-row mt-8 mb-16">
             <PaginationPrevious
+                size="md"
+                className="w-11.5"
                 disabled={currentPage <= 1 || isLoading}
                 text=""
                 onClick={() => onPageChange(currentPage - 1)}
             />
             {pages.map((page) => (
-                <PaginationLink key={page} isActive={page === currentPage} disabled={isLoading} onClick={() => onPageChange(page)} >
+                <PaginationLink key={page} size="md" className="w-11.5" isActive={page === currentPage} disabled={isLoading} onClick={() => onPageChange(page)} >
                     {page}
                 </PaginationLink>
             ))}
             <PaginationNext
+                size="md"
+                className="w-11.5"
                 disabled={currentPage >= total_pages || isLoading}
                 text=""
                 onClick={() => onPageChange(currentPage + 1)}
