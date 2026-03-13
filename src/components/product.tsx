@@ -1,4 +1,4 @@
-import { Check, X, Droplet, ShoppingCart } from "lucide-react";
+import { Check, X, ShoppingCart } from "lucide-react";
 import { Rating } from 'react-simple-star-rating'
 
 import type { Product as ProductType } from "@/shared/types/types";
