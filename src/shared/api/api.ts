@@ -11,7 +11,7 @@ const API_BASE =
 
 export function fetchProducts({
     page = 1,
-    per_page = 10,
+    per_page = 12,
     sort = 'rating',
     search,
 }: {
