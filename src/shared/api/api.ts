@@ -4,6 +4,11 @@ const getPages = (total: number, per_page: number) => {
     return Math.ceil(total / per_page);
 }
 
+const API_BASE =
+  import.meta.env.DEV
+    ? "https://ip-194-99-21-145-139178.vps.hosted-by-mvps.net"
+    : "";
+
 export function fetchProducts({
     page = 1,
     per_page = 10,
@@ -15,7 +20,7 @@ export function fetchProducts({
     search?: string;
     sort?: 'rating' | 'price' | 'name';
 }) {
-    return fetch(`/mock-data.json`, {
+    return fetch(`${API_BASE}/api/v1/products`, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',

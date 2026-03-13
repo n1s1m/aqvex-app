@@ -1,0 +1,9 @@
+{
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "rewrites": [
+      {
+        "source": "/api/:path*",
+        "destination": "https://ip-194-99-21-145-139178.vps.hosted-by-mvps.net/api/:path*"
+      }
+    ]
+  }
