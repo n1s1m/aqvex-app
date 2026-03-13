@@ -2,14 +2,14 @@ import { Check, CircleX, Droplet, ShoppingCart } from "lucide-react";
 import { Rating } from 'react-simple-star-rating'
 
 import type { Product as ProductType } from "@/shared/types/types";
-import { Card, CardHeader, CardTitle, CardContent, Image, CardFooter, Button, CardDescription, DiscountBadge } from "@/shared/ui";
+import { Card, CardHeader, CardTitle, CardContent, Image, CardFooter, Button, CardDescription, DiscountBadge, SelectItem, SelectValue, SelectContent, SelectTrigger, Select } from "@/shared/ui";
 
 
 export function Product({ product }: { product: ProductType }) {
     const hasDiscount = product.old_price && product.discount_percent > 0;
 
     return (
-        <Card className="flex flex-col justify-between shadow-none max-w-[347px] w-full gap-0 flex-1 max-sm:max-w-full max-sm:px-4">
+        <Card className="flex flex-col justify-between shadow-none max-w-[347px] w-full gap-0 flex-1 max-sm:max-w-full max-sm:px-4 rounded-none overflow-visible">
             <CardHeader className="p-0 border-0 border-b-0 bg-transparent gap-0">
                 <div className="relative w-full rounded-md overflow-hidden">
                     <Image src={product.image} alt={product.name} className="w-full h-full object-contain product-image" />
@@ -47,8 +47,22 @@ export function Product({ product }: { product: ProductType }) {
                     </p>
                 </div>
             </CardContent>
-            <CardFooter className="p-0 bordr-0 border-t-0 bg-transparent pt-8">
-                <Button variant="accent" size="lg" className="w-full gap-3 flex items-center justify-center">
+            <CardFooter className="p-0 bordr-0 border-t-0 bg-transparent pt-8 flex flex-row gap-2">
+                {product.volumes?.length > 0 && (
+                    <Select value={product.selected_volume_id}>
+                        <SelectTrigger size="lg" className="px-5 py-4 text-lg rounded-lg border-grey-100">
+                            <SelectValue placeholder="Выберите объем" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            {product.volumes.map((volume) => (
+                                <SelectItem key={volume.id} value={volume.id}>
+                                    {volume.label}
+                                </SelectItem>
+                            ))}
+                        </SelectContent>
+                    </Select>
+                )}
+                <Button variant="accent" size="lg" className="flex-1 gap-3 flex items-center justify-center">
                     <ShoppingCart className="size-6.5" />
                     <span className="text-primary text-lg font-normal">В корзину</span>
                 </Button>

@@ -28,6 +28,17 @@
     font-display: swap;
 }
 
+html {
+    box-sizing: border-box;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
 :root {
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
@@ -193,7 +204,7 @@
     width: 100%;
     height: auto;
     max-width: 100%;
-    margin: 0 auto;   
+    margin: 0 auto;
 }
 
 .text-gradient-main {
@@ -216,7 +227,9 @@
     /* Vendor prefix for compatibility */
 }
 
-svg.star-svg { display: inline; }
+svg.star-svg {
+    display: inline;
+}
 
 [data-disabled="true"] {
     opacity: 0.5;
