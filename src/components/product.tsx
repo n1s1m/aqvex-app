@@ -9,7 +9,7 @@ export function Product({ product }: { product: ProductType }) {
     const hasDiscount = product.old_price && product.discount_percent > 0;
 
     return (
-        <Card className="flex flex-col justify-between shadow-none max-w-[347px] w-full gap-0 flex-1 max-sm:max-w-full max-sm:px-4 rounded-none overflow-visible pt-0">
+        <Card className="flex flex-col justify-between shadow-none max-w-[347px] w-full gap-0 flex-1 max-sm:max-w-full max-sm:px-4 rounded-none overflow-visible pt-0 product-animation">
             <CardHeader className="p-0 border-0 border-b-0 bg-transparent gap-0">
                 <div className="relative w-full rounded-md overflow-hidden">
                     <Image src={product.image} alt={product.name} className="w-full h-full object-contain product-image" />

@@ -24,15 +24,6 @@
 
 @font-face {
     font-family: "Klein";
-    src: url("./assets/fonts/Klein/KleinText-SemiBold.otf") format("opentype");
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-    letter-spacing: -2%;
-}
-
-@font-face {
-    font-family: "Klein";
     src: url("./assets/fonts/Klein/KleinText-Bold.otf") format("opentype");
     font-weight: 700;
     font-style: normal;
@@ -247,4 +238,22 @@ svg.star-svg {
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
+}
+
+@keyframes product-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+} 
+
+.product-animation {
+    animation-name: product-card-enter;
+    animation-duration: 0.96s;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: forwards;
 }
